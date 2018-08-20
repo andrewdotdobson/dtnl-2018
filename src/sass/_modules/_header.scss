@@ -1,0 +1,26 @@
+header {
+
+	div {
+		margin: 50px 0 0 150px;
+		@include mq($from: extraSmall, $until: medium) {
+       		margin: 350px 0px 0 20px;
+    	}
+	}
+
+
+	nav {
+	
+	
+		a {
+			text-decoration: none;
+			border-bottom: none;
+			&:hover{
+				color:#ff9900;
+			}
+		}
+
+}
+}
+
+
+

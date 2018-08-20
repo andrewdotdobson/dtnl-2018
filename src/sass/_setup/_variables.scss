@@ -23,10 +23,10 @@ $red: #ff0000;
 $white: #fff;
 
 // style
-$background: $white;
-$copy: $grey-dark;
+$background: $black;
+$copy: $white;
 $error-message: $red;
-$placeholder-copy: $grey-medium;
+$placeholder-copy: $grey-light;
 
 
 /* Animation */
@@ -35,5 +35,11 @@ $transition-easing: ease-out;
 
 
 /* Fonts */
-$body-copy: Helvetica, Arial, sans-serif;
-$heading-copy: $body-copy;
+$heading-copy: 'Sorts Mill Goudy', serif;
+$body-copy: 'Open Sans', sans-serif;
+
+/* Content */
+$cover-img-url: '/assets/images/content/hero/andy_uc2.jpg';
+
+
+

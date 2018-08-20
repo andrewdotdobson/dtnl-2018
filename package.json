@@ -7,35 +7,27 @@
         "type": "git",
         "url": "https://github.com/donofkarma/stabile.git"
     },
-    "license" : "MIT",
+    "license": "MIT",
     "main": "/",
     "scripts": {
         "clean": "rimraf _site",
-
         "copy:fonts": "mkdir -p ./_site/assets/fonts && cp -r ./src/fonts/ ./_site/assets/fonts/",
         "copy:images": "mkdir -p ./_site/assets/images && cp -r ./src/images/public/ ./_site/assets/images/",
         "copy": "npm run copy:fonts && npm run copy:images",
-
-        "build:html": "jekyll build",
+        "build:html": "bundle exec jekyll build",
         "build:css": "./node_modules/.bin/node-sass ./src/sass/ --output ./_site/assets/css/",
         "build:js": "mkdir -p ./_site/assets/js && ./node_modules/browserify/bin/cmd.js src/js/script.js --standalone CS -o _site/assets/js/script.js -t babelify",
-
         "prebuild": "npm run clean",
         "build": "npm run build:html && npm run build:css && npm run build:js",
         "postbuild": "npm run copy",
-
         "deploy:css": "./node_modules/.bin/cleancss -o ./_site/assets/css/style.css ./_site/assets/css/style.css",
-
         "predeploy": "NODE_ENV=production npm run build",
         "deploy": "npm run deploy:css",
-
-        "watch:html": "jekyll serve --host 0.0.0.0",
+        "watch:html": "bundle exec jekyll serve --host 0.0.0.0",
         "watch:css": "./node_modules/.bin/node-sass ./src/sass/ --output ./_site/assets/css/ --watch",
         "watch:js": "./node_modules/watchify/bin/cmd.js src/js/script.js --standalone CS -o _site/assets/js/script.js -t babelify -v",
-
         "prewatch": "npm run build",
         "watch": "parallelshell 'npm run watch:html' 'npm run watch:css' 'npm run watch:js'",
-
         "start": "npm install && npm run watch"
     },
     "engines": {
